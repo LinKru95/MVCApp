@@ -5,23 +5,25 @@ namespace MVCApp.Controllers
 {
     public class HelloWorldController : Controller
     {
+        private static List<DogViewModel> dogs = new List<DogViewModel>();
+
         public IActionResult Index()
         {
-            DogViewModel dog = new DogViewModel() { Age=2, Name="Sif"};
-
-            return View(dog);
+            return View(dogs);
         }
 
         public IActionResult Create()
         {
-            var dogViewModel = new DogViewModel();
+            DogViewModel dogViewModel = new DogViewModel();
 
             return View(dogViewModel);
         }
 
         public IActionResult CreateDog(DogViewModel dogViewModel)
         {
-            return View();
+            dogs.Add(dogViewModel);
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Hello()
