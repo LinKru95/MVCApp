@@ -14,7 +14,9 @@ namespace MVCApp.Controllers
 
         public IActionResult Hello()
         {
-            return View();
+            DogViewModel doggo = new DogViewModel() { Age = 4, Name = "Lesse" };
+
+            return View(doggo);
         }
     }
 }
