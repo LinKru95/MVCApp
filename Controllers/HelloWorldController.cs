@@ -7,21 +7,28 @@ namespace MVCApp.Controllers
     {
         public IActionResult Index()
         {
-            DogViewModel doggo = new DogViewModel() { Age=2, Name="Sif"};
+            DogViewModel dog = new DogViewModel() { Age=2, Name="Sif"};
 
-            return View(doggo);
+            return View(dog);
         }
 
-        public IActionResult Create() 
+        public IActionResult Create()
+        {
+            var dogViewModel = new DogViewModel();
+
+            return View(dogViewModel);
+        }
+
+        public IActionResult CreateDog(DogViewModel dogViewModel)
         {
             return View();
         }
 
         public IActionResult Hello()
         {
-            DogViewModel doggo = new DogViewModel() { Age = 4, Name = "Lesse" };
+            DogViewModel dog = new DogViewModel() { Age = 4, Name = "Lesse" };
 
-            return View(doggo);
+            return View(dog);
         }
     }
 }
