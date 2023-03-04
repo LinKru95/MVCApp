@@ -28,7 +28,7 @@ namespace MVCApp
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
+                pattern: "{controller=HotelBooking}/{action=Index}/{id?}");
 
             app.Run();
         }
